@@ -35,6 +35,12 @@ App.Views.QueryResultsView = Backbone.View.extend({
       self.template = _.template($("#query-template").html());
       self.q = params.q;
       
+      self.collection.fetch({
+        success: function(collection) {
+          console.log("fetch", collection);
+        }
+      });
+      
       // Subscribe to the q param
       PUBNUB.subscribe({
           channel  : params.q,
