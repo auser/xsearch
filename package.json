@@ -9,5 +9,15 @@
     "express": "3.0.0beta6"
     , "jade": "*"
     , "pubnub": "3.1.9"
+    , "stylus": ""
+    , "nib": ""
+  }, 
+  "devDependencies": {
+    "node-dev": ""
+  },
+  "scripts": {
+    "test": "./bin/test",
+    "watch": "./bin/test --growl --watch",
+    "devserver": "./node_modules/node-dev/node-dev app.js"
   }
 }

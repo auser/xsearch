@@ -1,5 +1,35 @@
 extends layout
-
+    
 block content
-  h1= title
-  p Welcome to #{title}
+  body
+    #main
+      h1 main
+    script(src='/javascripts/underscore.js')
+    script(src='/javascripts/backbone.js')
+    script(src='/javascripts/backbone.queryparams.js')
+    script(src='/javascripts/application.js')
+    
+    script(src='/javascripts/models/result.js')
+    
+    script(src='/javascripts/views/indexView.js')
+    script(src='/javascripts/views/queryResultsView.js')
+  
+  script(id="index-template", type="text/template")
+    #searchBar.row
+      .span12
+        form(class="form-search", onSubmit="return false;")
+          input(type="text", class="content input-medium search-query form-inline span8")
+          button(type="submit", class="btn span2") Search
+  
+  script(id="query-template", type="text/template")
+    #results.row
+  
+  script(id="result-quote-template", type="text/template")
+    div(class="span3 <%= source.name %>")
+      p <%= data.quote.text %>
+  
+  script(id="result-image-template", type="text/template")
+    div(class="span3 <%= source.name %>")
+      | <a href="<%= data.image.src %>">
+      | <img src="<%= data.image.src %>" />
+      | </a>
