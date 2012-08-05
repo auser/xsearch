@@ -14,8 +14,9 @@ module.exports = function(app){
 
   app.get('/search.json', function(req, res, next) {
     var q = req.param('q');
-    sc.search(q);
-    res.send({result:'ok'});
+    sc.search(q, function(e, result) {
+      res.send(result);
+    });
   });
 
 };
