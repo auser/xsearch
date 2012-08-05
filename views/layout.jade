@@ -1,7 +1,22 @@
-doctype 5
-html
+!!! 5
+html(lang='en')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    title XSearch
+    include ./shared/head
   body
-    block content
+    .navbar
+      .navbar-inner
+        .container
+          .brand
+            a(href='#') Social Search
+          ul.nav
+            li.active
+              a(href='/') Home
+            li
+              a(href="/#/images") Images
+    .container
+      .content
+        block content
+        
+      footer
