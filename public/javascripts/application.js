@@ -29,7 +29,7 @@ App.router = new (Backbone.Router.extend({
     },
     query: function(q, params) {
       var results = new Results([], {q: q});
-      this.setView(new App.Views.QueryResultsView({q: q, collection: results}));
+      this.setView(new App.Views.QueryResultsView({q: q, collection: results}), {q: q});
     },
     
 }));

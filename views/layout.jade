@@ -5,13 +5,16 @@ html(lang='en')
     title XSearch
     include ./shared/head
   body
-    .topbar
-      .topbar-inner
+    .navbar
+      .navbar-inner
         .container
-          a.brand(href='#') XSearch
+          .brand
+            a(href='#') Social Search
           ul.nav
             li.active
-              a(href='#') Home
+              a(href='/') Home
+            li
+              a(href="/#/images") Images
     .container
       .content
         block content

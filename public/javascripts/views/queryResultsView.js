@@ -33,6 +33,7 @@ App.Views.QueryResultsView = Backbone.View.extend({
       var self = this;
       _.bindAll(self, "destroy", "render");
       self.template = _.template($("#query-template").html());
+      self.q = params.q;
       
       // Subscribe to the q param
       PUBNUB.subscribe({
@@ -56,7 +57,7 @@ App.Views.QueryResultsView = Backbone.View.extend({
           model: model
         });
 
-        $(self.el).prepend(resultView.render().el);
+        $("#results").prepend(resultView.render().el);
       }, this);
       
     },
@@ -68,7 +69,7 @@ App.Views.QueryResultsView = Backbone.View.extend({
     render: function() {
       var self = this;
       
-      $(self.el).html(self.template());
+      $(self.el).html(self.template({q: self.q}));
       return self;
     }
 });

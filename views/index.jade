@@ -15,6 +15,8 @@ block content
     script(src='/javascripts/views/queryResultsView.js')
   
   script(id="index-template", type="text/template")
+    .logo.span12
+      img(src="/img/logo.png")
     #searchBar.row
       .span12
         form(class="form-search", onSubmit="return false;")
@@ -22,14 +24,15 @@ block content
           button(type="submit", class="btn span2") Search
   
   script(id="query-template", type="text/template")
+    h2.row.span12 Results for <%= q %>
     #results.row
   
   script(id="result-quote-template", type="text/template")
-    div(class="span3 <%= source.name %>")
+    div(class="span2 <%= source.name %>")
       p <%= data.quote.text %>
   
   script(id="result-image-template", type="text/template")
-    div(class="span3 <%= source.name %>")
+    div(class="span2 <%= source.name %>")
       | <a href="<%= data.image.src %>">
       | <img src="<%= data.image.src %>" />
       | </a>
